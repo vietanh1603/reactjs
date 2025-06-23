@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Login,Home,ProtectedRoute } from './components';
+import { Login,Post,ProtectedRoute } from './components';
 
 const App = () => {
     return (
@@ -11,7 +11,7 @@ const App = () => {
                 path="/home"
                 element={
                     <ProtectedRoute>
-                        <Home />
+                        <Post />
                     </ProtectedRoute>
                 }
             />
