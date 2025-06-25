@@ -1,0 +1,15 @@
+cai axios
+
+npm install axios
+
+cai Toastify
+
+npm i --save react-toastify
+
+cai json server
+
+npm install json-server
+npm i concurrently
+
+create db.json
+npx json-server db.json

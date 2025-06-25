@@ -5,7 +5,7 @@ const baseUrl = 'https://8fty49z8qb.execute-api.ap-southeast-1.amazonaws.com';
 // lay token moi
 const getNewToken = async (callback) => {
     try {
-        const response = await axios.post(`${baseUrl}/get_new_token`, {
+        const response = await axios.post(`${baseUrl}/login/get_new_token`, {
             refresh: localStorage.getItem('refresh'),
         });
 
