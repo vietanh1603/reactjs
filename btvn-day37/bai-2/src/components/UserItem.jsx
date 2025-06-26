@@ -1,6 +1,6 @@
 import React from 'react';
 
-function UserItem({ user }) {
+const UserItem = ({ user }) => {
     console.log(`UserItem: ${user.name}`);
 
     return (

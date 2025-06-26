@@ -1,7 +1,7 @@
 import React from 'react';
 import { memo } from 'react';
 
-function CartItem({ item, onIncrease, onDecrease, onDelete }) {
+const CartItem = ({ item, onIncrease, onDecrease, onDelete }) => {
     console.log(`render: ${item.name}`);
 
     return (

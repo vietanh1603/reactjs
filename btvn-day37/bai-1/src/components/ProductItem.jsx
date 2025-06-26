@@ -4,7 +4,7 @@ function formatPrice(price) {
     return price.toLocaleString('vi-VN') + ' VND';
 }
 
-function ProductItem({ product }) {
+const ProductItem = ({ product }) => {
     return (
         <div
             style={{

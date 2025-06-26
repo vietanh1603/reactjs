@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import CartItem from './CartItem';
 
-function CartUI() {
+const CartUI = () => {
     const [cart, setCartItems] = useState([
         { id: 1, name: 'Áo thun', quantity: 1 },
         { id: 2, name: 'Quần jeans', quantity: 2 },

@@ -1,9 +1,9 @@
 import React from 'react';
 import ProductItem from './ProductItem';
 
-function ProductList({ products }) {
+const ProductList = ({ products }) => {
     if (products.length === 0) {
-        return <p>Không có sản phẩm phù hợp.</p>;
+        return <p>Không có sản phẩm phù hợp</p>;
     }
 
     return (

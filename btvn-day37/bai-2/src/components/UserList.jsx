@@ -1,7 +1,7 @@
 import React from 'react';
 import UserItem from './UserItem';
 
-function UserList({ users }) {
+const UserList = ({ users }) => {
     return (
         <div style={{marginTop: 20}}>
             {users.map(user => (
