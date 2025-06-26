@@ -13,3 +13,7 @@ npm i concurrently
 
 create db.json
 npx json-server db.json
+
+
+cai React Router
+npm install react-router-dom
