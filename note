@@ -17,3 +17,7 @@ npx json-server db.json
 
 cai React Router
 npm install react-router-dom
+
+sua port
+
+npm run dev -- -- port 4000
