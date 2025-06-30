@@ -3,42 +3,55 @@ import './style.sass'
 import Row from "./Row.jsx";
 import { TableContext } from "./const.js";
 import {useState} from "react";
+import CellSelection from "./CellSelection.jsx";
+import CellInput from "./CellInput.jsx";
+
 
 const defaultCursors = {
     rowIndex:0,
     columnIndex:0,
     top: 0,
     left: 0,
+    width: 0,
+    height: 0,
+    isEditing: false
 }
 
-export default function({columns,rows}) {
+export default function({columns,rows,columnIndex,rowIndex, onInput}) {
     const [cursor,setCursor] = useState({...defaultCursors})
 
-    console.log(cursor)
 
     const providers = {
-        columns,rows,cursor,setCursor
+        columns,rows,cursor,setCursor,rowIndex,columnIndex,onInput
     };
     return(
         <TableContext value={providers}>
-            <table className={'editable-table'}>
-                <thead>
-                <tr>
+            <div style={{position: 'relative'}}>
+                <table className={'editable-table'}>
+                    <thead>
+                    <tr>
+                        {
+                            columns.map(column => {
+                                return <th contentEditable={true} key={column.name} style={{width:column.width}}>{column.name}</th>
+                            })
+                        }
+                    </tr>
+                    </thead>
+                    <tbody>
                     {
-                        columns.map(column => {
-                            return <th key={column.name}>{column.name}</th>
+                        rows.map((row, index) => {
+                            return <Row
+                                key={row.product}
+                                rowIndex={index}
+                                row={row}
+                            />
                         })
                     }
-                </tr>
-                </thead>
-                <tbody>
-                {
-                    rows.map(row => {
-                        return <Row key={row.product} row={row}/>
-                    })
-                }
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+                <CellInput/>
+                <CellSelection/>
+            </div>
         </TableContext>
 
     )
