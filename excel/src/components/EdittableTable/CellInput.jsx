@@ -30,27 +30,30 @@ export default function () {
             inputRef.current.focus();
         })
         if (e.key === 'Enter') {
-            onInput({rowIndex: cursor.rowIndex, columIndex: cursor.columIndex});
-            rows[cursor.rowIndex][colName] = e.key;
+            e.preventDefault();
+            setCursor({...cursor, isEditing: false});
+            rows[cursor.rowIndex][colName] = inputValue;
+
+            if (typeof onInput === 'function') {
+                onInput({
+                    rowIndex: cursor.rowIndex,
+                    columnIndex: cursor.columnIndex,
+                    value: inputValue
+                });
+            }
         }
     }
 
     const onBlur = () => {
-
+        setCursor({...cursor, isEditing: false});
+        rows[cursor.rowIndex][colName] = inputValue;
     }
 
     // update input value
     useEffect(() => {
         setInputValue(curRow[colName]);
         cellInputRef.current.focus()
-
-        if(cursor.isEditing) {
-            onInput({rowIndex: cursor.rowIndex,
-                    columIndex: cursor.columIndex,
-                    value: inputRef.current.value,});
-        }
-
-    }, [curRow[colName]])
+    }, [cursor.rowIndex, cursor.columnIndex, cursor.width, cursor.height])
 
     return (
         <div
