@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 
-export default function Options({ options, selected, answer, showAnswer, onSelect }) {
+export default function ({ options, selected, answer, showAnswer, onSelect }) {
     return (
         <div className={'options-container'}>
             {options.map((option, index) => {

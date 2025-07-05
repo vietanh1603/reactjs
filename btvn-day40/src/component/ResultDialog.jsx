@@ -1,6 +1,6 @@
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from "@mui/material";
 
-export default function ResultDialog({ open, score, total, onClose }) {
+export default function ({ open, score, total, onClose }) {
     return (
         <Dialog open={open} onClose={onClose}>
             <DialogTitle>Trả lời sai rùi nhé</DialogTitle>

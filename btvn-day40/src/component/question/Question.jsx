@@ -1,8 +1,8 @@
-import { useQuiz } from "../../context/QuizContext.jsx";
+import { useQuiz } from "../../store/QuizContext.jsx";
 import { useEffect, useState } from "react";
 import {questions} from "./question.js";
 
-export default function Question() {
+export default function() {
     const [time, setTime] = useState(30);
     const { state } = useQuiz();
     const current = questions[state.currentIndex];
@@ -23,7 +23,7 @@ export default function Question() {
                 <span>Câu {state.currentIndex + 1}/15</span>
                 <span className="time">{time} giây</span>
             </div>
-            <p className="question">{current.question}</p> {/* ✅ hiển thị nội dung câu hỏi */}
+            <p className="question">{current.question}</p>
         </div>
     );
 }

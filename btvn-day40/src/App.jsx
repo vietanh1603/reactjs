@@ -5,7 +5,7 @@ import './App.css'
 import { Button } from "@mui/material";
 import './component/style.sass'
 import { questions } from './component/question/question.js';
-import { QuizProvider, useQuiz } from './context/QuizContext.jsx';
+import { QuizProvider, useQuiz } from './store/QuizContext.jsx';
 import {useEffect} from "react";
 
 

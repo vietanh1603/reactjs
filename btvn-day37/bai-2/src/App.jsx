@@ -6,7 +6,6 @@ const Users = [
     { id: 2, name: 'Trần Thị B' },
     { id: 3, name: 'Lê Văn C' },
 ];
-
 function App() {
     const [users, setUsers] = useState(Users);
     const [point, setPoint] = useState(0);

@@ -54,9 +54,9 @@ function quizReducer(state, action) {
 export const QuizProvider = ({ children }) => {
     const [state, dispatch] = useReducer(quizReducer, initialState);
     return (
-        <QuizContext.Provider value={{ state, dispatch }}>
+        <QuizContext value={{ state, dispatch }}>
             {children}
-        </QuizContext.Provider>
+        </QuizContext>
     );
 };
 
