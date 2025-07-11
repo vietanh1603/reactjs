@@ -21,3 +21,62 @@ npm install react-router-dom
 sua port
 
 npm run dev -- -- port 4000
+
+
+
+
+
+        b1: tao db.json
+        b2: db.json
+        {
+        "products": [
+            { "id": 1, "name": "Sản phẩm 1", "price": 100, "description": "Mô tả 1" },
+            { "id": 2, "name": "Sản phẩm 2", "price": 200, "description": "Mô tả 2" }
+          ]
+        }
+        b3: cai json server
+        npm i json-server
+
+        them vao packet.json
+        "server": "json-server --watch src/db.json --port 3001"
+
+        
+        b4: cai axios
+        npm i axios
+
+        const baseUrl = http://localhost:3001
+
+
+         const getMethod = async () => {
+        const respone = await axios.get(baseUrl)
+        return respone.data
+        }
+        //them
+        const postMethod = async (body) => {
+        const respone = await axios.post(baseUrl, body)
+        return response.data;
+        // sua
+        const putMethod = async(id, body) => {
+        const respond = await axios.put(`${baseUrl}/${id}`,body);
+        return respone.data
+        }
+        // xoa
+        const deleteMethod = async () => {
+        const response = await axios.post(`${baseUrl}/${id}`)
+        return respone.status === 200;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
