@@ -1,0 +1,16 @@
+services:
+  web:
+    container_name: btvn-day46
+    image: btvn-day46
+    build:
+      context: ../btvn-day46
+      dockerfile: Dockerfile
+
+    volumes:
+      - '../btvn-day46:/app/btvn-day46'
+    ports:
+      - 5173:5173
+    command:
+      - npm
+      - run
+      - dev
